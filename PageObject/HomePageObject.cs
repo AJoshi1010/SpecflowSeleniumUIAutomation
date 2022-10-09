@@ -142,7 +142,7 @@ public class HomePageObject
         fluentWait.Timeout = TimeSpan.FromSeconds(MaxtWaitInSeconds);
         fluentWait.PollingInterval = TimeSpan.FromMilliseconds(100);
         fluentWait.IgnoreExceptionTypes(typeof(NoSuchElementException));
-        fluentWait.Message = "Element to be searched by '" + by.ToString() + "' not found";
+        fluentWait.Message = "Element not found on TLF page";
         return fluentWait.Until(x => x.FindElement(by));
     }
 
@@ -174,7 +174,7 @@ public class HomePageObject
         fluentWait.Timeout = TimeSpan.FromSeconds(MaxtWaitInSeconds);
         fluentWait.PollingInterval = TimeSpan.FromMilliseconds(100);
         fluentWait.IgnoreExceptionTypes(typeof(NoSuchElementException));
-        fluentWait.Message = "Element '" + element.ToString() + "' not found on page";
+        fluentWait.Message = "Element not found on TLF page";
         return fluentWait.Until(x => element);
     }
 
